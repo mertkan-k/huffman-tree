@@ -35,7 +35,7 @@ int main()
 
 			// ch[0] = ::toupper(ch);
 
-			cout << endl << "Please enter frequency of " << ch << endl;
+			cout << endl << "Please enter frequency of " << ch;
 			double fq; cin >> fq;
 
 			cout << "Succesful:: " << ch << ":" << fq << endl;
