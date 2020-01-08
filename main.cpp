@@ -6,39 +6,54 @@ using namespace std;
 
 int main()
 {
-	/*while (true)
+	cout << "Chose your alphabet frequency list:" << endl;
+	cout << "1: for use default" << endl;
+	cout << "2: for define own alphabet" << endl;
+
+	char c;
+	cin >> c;
+
+	Huffman* h;
+
+	if (c == '1')
 	{
-		cout << endl << "Please enter any alphabet letter for include: " << endl << "(Enter any number for start)";
-
-		string ch;
-		cin >> ch;
-
-		if (!isalpha(ch[0]))
-			break;
-
-		ch[0] = ::toupper(ch[0]);
-
-	}*/
-
-	/*auto it = alphabetFreq.begin();
-	for (size_t i = 0; i < 24; i++)
+		h = new Huffman();
+	}
+	else if (c == '2')
 	{
-		string ch = it->first;
-		double fr = it->second;
+		tFrequencyMap f;
 
-		tTree* t = new tTree(ch, fr);
+		while (true)
+		{
+			cout << endl << "Please enter any alphabet letter for include: " << endl << "(Enter any number if you don't want any more)";
 
-		l.push_back(t);
-		cout << "include succes:: key: " << ch[0] << " " << "freq: " << fr << endl;
+			char ch; cin >> ch;
 
-		it++;
-	}*/
+			if (!isalpha(ch))
+				break;
 
-	Huffman* h = new Huffman();
+			// ch[0] = ::toupper(ch);
 
-	cout << "HELLO: " << h->Encrypt("HELLO") << endl;
+			cout << endl << "Please enter frequency of " << ch << endl;
+			double fq; cin >> fq;
 
-	cout << "https://github.com/mertkan-k/" ;
-	int gg; cin >> gg;
+			cout << "Succesful:: " << ch << ":" << fq << endl;
+			f[ch] = fq;
+		}
+
+		h = new Huffman(f);
+	}
+
+	cout << "Import completed!" << endl;
+
+	while (true)
+	{
+		cout << "Enter word(s) for encrypt: ";
+
+		string enc; cin >> enc;
+
+		cout << enc << " :" << h->Encrypt(enc.c_str()) << endl;
+	}
+
 	return EXIT_SUCCESS;
 }
