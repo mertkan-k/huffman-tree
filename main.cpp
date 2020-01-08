@@ -7,8 +7,8 @@ using namespace std;
 int main()
 {
 	cout << "Chose your alphabet frequency list:" << endl;
-	cout << "1: for use default" << endl;
-	cout << "2: for define own alphabet" << endl;
+	cout << "1: use default" << endl;
+	cout << "2: define own alphabet" << endl;
 	cout << "3: import from file" << endl;
 
 	char c;
