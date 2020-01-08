@@ -9,6 +9,7 @@ int main()
 	cout << "Chose your alphabet frequency list:" << endl;
 	cout << "1: for use default" << endl;
 	cout << "2: for define own alphabet" << endl;
+	cout << "3: import from file" << endl;
 
 	char c;
 	cin >> c;
@@ -37,6 +38,27 @@ int main()
 			cout << endl << "Please enter frequency of " << ch << endl;
 			double fq; cin >> fq;
 
+			cout << "Succesful:: " << ch << ":" << fq << endl;
+			f[ch] = fq;
+		}
+
+		h = new Huffman(f);
+	}
+	else if (c == '3')
+	{
+		cout << "File formatting example:" << endl;
+		cout << "<character> <frequency>" << endl;
+		cout << "A 1.3212" << endl;
+		cout << "B 1.1132" << endl;
+		cout << "Please enter file name for importing: ";
+		string fileName; cin >> fileName;
+
+		ifstream importFile;
+		importFile.open(fileName, ios::in );
+
+		char ch; double fq; tFrequencyMap f;
+		while (importFile >> ch >> fq)
+		{
 			cout << "Succesful:: " << ch << ":" << fq << endl;
 			f[ch] = fq;
 		}
