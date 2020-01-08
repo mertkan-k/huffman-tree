@@ -37,10 +37,11 @@ private:
 	void CreateTree(bool log=false);
 	void ImportDefaultFrequencMap();
 	void ImportMap(tFrequencyMap m);
+	void Print(tTree* t);
 public:
 	string Encrypt(const char* message);
 	void PrintTree();
-	void Print(tTree* t);
+	// string Decrypt(const char* message); // TODO:
 };
 
 #endif

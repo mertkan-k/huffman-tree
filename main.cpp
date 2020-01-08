@@ -54,7 +54,7 @@ int main()
 		string fileName; cin >> fileName;
 
 		ifstream importFile;
-		importFile.open(fileName, ios::in );
+		importFile.open(fileName, ios::in);
 
 		char ch; double fq; tFrequencyMap f;
 		while (importFile >> ch >> fq)
@@ -67,6 +67,8 @@ int main()
 	}
 
 	cout << "Import completed!" << endl;
+
+	// h->PrintTree();
 
 	while (true)
 	{
