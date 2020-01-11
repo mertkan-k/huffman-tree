@@ -24,6 +24,7 @@ Huffman::Huffman()
 
 Huffman::~Huffman()
 {
+	// TODO: free tree
 }
 
 void Huffman::CreateTree(bool log)
